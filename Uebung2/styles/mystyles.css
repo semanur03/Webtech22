@@ -9,13 +9,15 @@ body {
   }
 
   table {
-    border: solid 2px black;
-    box-shadow: 5mm grey;
+    border-collapse: collapse;
+    border: 2px solid black;
+    box-shadow: 10px 10px 5px grey;
     width: 80%;
   }
 
   th {
     border: solid 1px black;
+    padding: 5px;
   }
 
   td {
@@ -38,14 +40,18 @@ body {
   nav>a {
     color: white;
     background-color: #0082d1;
+    border: 1px solid #0082D1;
     font-weight: bold;
     text-decoration-line: none;
-    
+    border-radius: 7px;
+    padding: 6px;
+    box-shadow: 5px 5px 5px grey;
   }
 
   nav>a:hover {
     color: #ff5f00;
     background-color: #afafaf;
+    border: 1px solid #afafaf;
   }
 
   footer {
