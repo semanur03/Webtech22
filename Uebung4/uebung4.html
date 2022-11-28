@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,
+        initial-scale=1.0">
+        <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.min.css" >
+        <title>Übungsaufgabe 4</title>
+        <style>
+            h4{
+                color: red;
+            }
+        </style>
+    </head>
+    
+    <body>
+
+        <div class="container">
+            <h1>Teilnehmerin Registrierung</h1>
+        <form class="row g-3">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="fname" 
+                        placeholder="First name" name="fname" required>
+                    <div id="firstnameFeedback" class="invalid-feedback">
+                        Bitte Vornamen eingeben!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="lname" placeholder="Last name" name="lname" required>
+                    <div id="lastnameFeedback" class="invalid-feedback">
+                        Bitte Nachnamen eingeben!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="mail" placeholder="E-Mail" name="mail" required>
+                    <div id="emailFeedback" class="invalid-feedback">
+                        Bitte E-Mail eingeben!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="ip" placeholder="IP-Address" name="ip" required>
+                    <div id="ipaddressFeedback" class="invalid-feedback">
+                        Bitte IP-Adresse eingeben!
+                    </div>
+                </div>
+                
+                <div class="col-3">
+                    <button type="reset" class="btn btn-secondary">Abbrechen</button>
+                </div>
+                <div class="col-3">
+                    <button type="submit" class="btn btn-success" onclick="show(event)">Registrierung</button>
+                </div>
+        </form>
+        
+        <div class="mt-5">
+            <h4>Eingegebene Wert</h4>
+            <ul id="ul1"></ul>
+        </div>
+    
+        <script>
+            function show(event) {
+
+                //Zugriff auf die input-felder über deren ids
+                // Zugriff auf die eingegebenen Werte über .value
+                //output.innerHTML = document.getElementById('fname').value;
+                let fname = document.querySelector('#fname').value
+                let lname = document.querySelector('#lname').value;
+                let mail = document.querySelector('#mail').value;
+                let ip = document.querySelector('#ip').value;
+
+                // Testausgabe auf der Konsole
+                console.log(fname);
+                console.log(lname);
+                console.log(mail);
+                console.log(ip);
+                
+
+                //Befüllen der Liste
+                // Bootstrap-Klassen list-group und list-group-item
+                let liste = document.getElementById('ul1');
+                liste.classList.add('list-group');
+                liste.innerHTML = '<li class="List-group-item"> Vorname : ' + fname + '</li>'
+                                + '<li class="List-group-item"> Nachname : ' + lname + '</li>'
+                                + '<li class="List-group-item"> E-Mail : ' + mail + '</li>'
+                                + '<li class="List-group-item"> IP-Addresse : ' + ip + '</li>'
+
+                //Verhindern des neuladens der Seite
+                event.preventDefault();
+            }
+        </script>
+        </div>        
+    </body>
+</html>
